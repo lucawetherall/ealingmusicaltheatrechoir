@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rehearsals &amp; Concerts — Ealing Musical Theatre Choir</title>
+  <meta name="description" content="Rehearsal schedule and upcoming concert dates for Ealing Musical Theatre Choir. All concerts performed alongside professional musical theatre instrumentalists." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Page-specific styles */
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--color-border);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-coral);
+      border: 2px solid var(--color-white);
+      box-shadow: 0 0 0 2px var(--color-coral);
+    }
+    .concert-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .concert-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .concert-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .concert-date-badge {
+      background: var(--color-coral);
+      color: var(--color-white);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      text-align: center;
+      min-width: 80px;
+      flex-shrink: 0;
+    }
+    .concert-date-badge .day   { font-size: 1.8rem; font-weight: 900; font-family: var(--font-heading); line-height: 1; }
+    .concert-date-badge .month { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.85; }
+    .concert-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .concert-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+    .concert-card .btn { margin-top: 16px; }
+
+    .placeholder-date .concert-date-badge { background: var(--color-border); }
+    .placeholder-date .concert-date-badge .day,
+    .placeholder-date .concert-date-badge .month { color: var(--color-text-muted); }
+
+    /* Rehearsal timing grid */
+    .timing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    @media (max-width: 600px) {
+      .timing-grid { grid-template-columns: 1fr; }
+    }
+    .timing-item {
+      background: var(--color-bg-soft);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      border: 1px solid var(--color-border);
+    }
+    .timing-item dt { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); margin-bottom: 4px; }
+    .timing-item dd { font-size: 1.05rem; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <!-- ======== Navigation ======== -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">Ealing <span>Musical Theatre</span> Choir</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="calendar.html">Rehearsals &amp; Concerts</a></li>
+        <li><a href="join.html" class="btn btn-primary nav-cta">Join Us</a></li>
+      </ul>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======== Page Hero ======== -->
+  <div class="page-hero">
+    <span class="section-label">Schedule</span>
+    <h1>Rehearsals &amp; Concerts</h1>
+    <p>Everything you need to know about when and where we rehearse — and where we perform.</p>
+  </div>
+
+  <!-- ======== Rehearsals ======== -->
+  <section id="rehearsals">
+    <div class="container">
+      <div class="text-centre mb-16">
+        <span class="section-label">Weekly Rehearsals</span>
+        <h2>Come Sing With Us</h2>
+        <p class="section-intro">We rehearse weekly throughout the year (excluding school holidays). All are welcome to come along to a taster session — no booking required.</p>
+      </div>
+
+      <!-- Rehearsal card -->
+      <div class="rehearsal-card mt-40">
+        <div class="rehearsal-icon">🎵</div>
+        <dl class="rehearsal-detail">
+          <!-- UPDATE: Fill in the correct day, time, and venue details -->
+          <dt>Day</dt>
+          <dd><!-- UPDATE: e.g. Every Tuesday --></dd>
+          <dt>Time</dt>
+          <dd><!-- UPDATE: e.g. 7:00 PM – 9:00 PM --></dd>
+          <dt>Venue</dt>
+          <dd><!-- UPDATE: e.g. Ealing Green Church Hall, Ealing Green, W5 5QA --></dd>
+        </dl>
+      </div>
+
+      <!-- What to bring -->
+      <div class="rehearsal-info-box">
+        <h3>What to Expect</h3>
+        <ul class="info-list mt-24">
+          <li>A warm welcome from Izzy and the choir</li>
+          <li>A focused, fun rehearsal led by a professional Musical Director</li>
+          <li>Sheet music provided — no need to bring anything</li>
+          <li>No sight-reading skills required; we learn by ear and by printed music</li>
+          <li>Friendly people who share your love of musical theatre</li>
+          <li>Tea &amp; coffee (because every good choir needs it!)</li>
+        </ul>
+      </div>
+
+      <div class="highlight-callout mt-24">
+        <p>
+          🎟️ <strong>New members:</strong> Your first taster session is free.
+          Come along, see if you love it, then decide. <!-- UPDATE: Adjust if this isn't the policy -->
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ======== Concerts ======== -->
+  <section id="concerts" class="section-bg-soft">
+    <div class="container">
+      <div class="text-centre mb-16">
+        <span class="section-label">Performances</span>
+        <h2>Upcoming Concerts</h2>
+      </div>
+
+      <!-- Professional instrumentalists banner -->
+      <div class="pro-banner mt-40">
+        <div class="banner-icon">🎺</div>
+        <h3>Performed with Professional Musical Theatre Instrumentalists</h3>
+        <p>
+          Every Ealing Musical Theatre Choir concert features a live band of
+          professional musical theatre musicians — giving our performances a
+          quality and energy that you simply have to experience to believe.
+        </p>
+      </div>
+
+      <!-- Concert timeline -->
+      <!-- UPDATE: Replace placeholder concert entries with real events -->
+      <div class="timeline mt-40">
+
+        <div class="timeline-item placeholder-date">
+          <div class="concert-card">
+            <div class="concert-header">
+              <div>
+                <div class="event-date"><!-- UPDATE: Season/Year --></div>
+                <h3>Summer Showcase 2026</h3>
+              </div>
+              <div class="concert-date-badge">
+                <!-- UPDATE: Replace TBC with real date -->
+                <div class="day">TBC</div>
+                <div class="month">2026</div>
+              </div>
+            </div>
+            <p>
+              An unforgettable evening of show-stopping musical theatre numbers,
+              performed by Ealing Musical Theatre Choir with full live accompaniment
+              by professional West End-standard musicians.
+            </p>
+            <div class="concert-meta">
+              <span>📍 <!-- UPDATE: Venue name & postcode --></span>
+              <span>🕗 <!-- UPDATE: Doors open / start time --></span>
+              <span>🎟️ <!-- UPDATE: Ticket price or "Free entry" --></span>
+            </div>
+            <a href="#" class="btn btn-secondary"><!-- UPDATE: Link to ticket page or contact -->&nbsp;More Info / Tickets</a>
+          </div>
+        </div>
+
+        <div class="timeline-item placeholder-date">
+          <div class="concert-card">
+            <div class="concert-header">
+              <div>
+                <div class="event-date"><!-- UPDATE: Season/Year --></div>
+                <h3>Broadway &amp; Beyond — Autumn Concert</h3>
+              </div>
+              <div class="concert-date-badge">
+                <div class="day">TBC</div>
+                <div class="month">2026</div>
+              </div>
+            </div>
+            <p>
+              A journey through the greatest hits of Broadway and the West End —
+              from timeless classics to contemporary chart-toppers. Accompanied
+              by professional musical theatre instrumentalists.
+            </p>
+            <div class="concert-meta">
+              <span>📍 <!-- UPDATE: Venue name & postcode --></span>
+              <span>🕗 <!-- UPDATE: Start time --></span>
+              <span>🎟️ <!-- UPDATE: Ticket info --></span>
+            </div>
+            <a href="#" class="btn btn-secondary">More Info / Tickets</a>
+          </div>
+        </div>
+
+        <div class="timeline-item placeholder-date">
+          <div class="concert-card">
+            <div class="concert-header">
+              <div>
+                <div class="event-date"><!-- UPDATE: Season/Year --></div>
+                <h3>A Musical Theatre Christmas</h3>
+              </div>
+              <div class="concert-date-badge">
+                <div class="day">TBC</div>
+                <div class="month">Dec 2026</div>
+              </div>
+            </div>
+            <p>
+              Celebrate the season with an enchanting programme of festive favourites
+              and musical theatre magic. An ideal pre-Christmas treat for all the family,
+              with live professional accompaniment.
+            </p>
+            <div class="concert-meta">
+              <span>📍 <!-- UPDATE: Venue name & postcode --></span>
+              <span>🕗 <!-- UPDATE: Start time --></span>
+              <span>🎟️ <!-- UPDATE: Ticket info --></span>
+            </div>
+            <a href="#" class="btn btn-secondary">More Info / Tickets</a>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+
+      <p class="text-muted text-centre mt-32" style="font-size:0.9rem;">
+        Concert dates and venues are updated as they are confirmed. Check back regularly or <a href="join.html">join the choir</a> to be first to know.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======== CTA Banner ======== -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Want to Perform on Stage?</h2>
+      <p>Join Ealing Musical Theatre Choir and you could be singing at our next concert alongside professional musicians.</p>
+      <div>
+        <a href="join.html" class="btn btn-white">Join the Choir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Footer ======== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="nav-logo">Ealing <span>Musical Theatre</span> Choir</div>
+          <p>A joyful adult choir celebrating the magic of musical theatre in West London. Directed by Izzy Mohan.</p>
+          <div class="footer-social mt-24">
+            <a href="#" title="Facebook" aria-label="Facebook">f</a>
+            <a href="#" title="Instagram" aria-label="Instagram">&#x1F4F7;</a>
+            <a href="#" title="YouTube" aria-label="YouTube">&#x25B6;</a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Footer navigation">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About &amp; Meet Izzy</a>
+          <a href="calendar.html">Rehearsals &amp; Concerts</a>
+          <a href="join.html">Join Us</a>
+        </nav>
+        <div class="footer-col">
+          <h4>Get in Touch</h4>
+          <a href="mailto:hello@ealingmusicaltheatrechoir.co.uk">hello@ealingmusicaltheatrechoir.co.uk</a>
+          <p style="font-size:0.85rem;margin-top:12px;color:rgba(255,255,255,0.4);">Ealing, West London</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ealing Musical Theatre Choir. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
